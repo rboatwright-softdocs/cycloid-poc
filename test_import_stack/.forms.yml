@@ -1,0 +1,226 @@
+version: "2"
+use_cases:
+- name: default
+  sections:
+  - name: Config
+    groups:
+    - name: pipeline
+      technologies:
+      - pipeline
+      vars:
+      - widget: text_area
+        required: true
+        default: ((azure_storage.account_name))
+        type: string
+        key: terraform_storage_account_name
+        name: terraform_storage_account_name
+      - widget: text_area
+        required: true
+        default: public
+        type: string
+        key: azure_env
+        name: azure_env
+      - widget: text_area
+        required: true
+        default: ((softdocs-azure.subscription_id))
+        type: string
+        key: azure_subscription_id
+        name: azure_subscription_id
+      - widget: text_area
+        required: true
+        default: ((softdocs-azure.client_secret))
+        type: string
+        key: azure_client_secret
+        name: azure_client_secret
+      - widget: text_area
+        required: true
+        default: git@github.com:rboatwright-softdocs/cycloid-poc.git
+        type: string
+        key: config_git_repository
+        name: config_git_repository
+      - widget: text_area
+        required: true
+        default: test
+        type: string
+        key: env
+        name: env
+      - widget: text_area
+        required: true
+        default: 1.0.7
+        type: string
+        key: terraform_version
+        name: terraform_version
+      - widget: text_area
+        required: true
+        default: ((azure_storage.access_key))
+        type: string
+        key: terraform_storage_access_key
+        name: terraform_storage_access_key
+      - widget: text_area
+        required: true
+        default: ((softdocs-azure.tenant_id))
+        type: string
+        key: azure_tenant_id
+        name: azure_tenant_id
+      - widget: text_area
+        required: true
+        default: francecentral
+        type: string
+        key: azure_location
+        name: azure_location
+      - widget: text_area
+        required: true
+        default: ((git.ssh_key))
+        type: string
+        key: sc_git_key
+        name: sc_git_key
+      - widget: text_area
+        required: true
+        default: ((git.ssh_key))
+        type: string
+        key: config_git_private_key
+        name: config_git_private_key
+      - widget: text_area
+        required: true
+        default: test_import_project
+        type: string
+        key: project
+        name: project
+      - widget: text_area
+        required: true
+        default: softdocs
+        type: string
+        key: customer
+        name: customer
+      - widget: text_area
+        required: true
+        default: cycloid-container
+        type: string
+        key: terraform_storage_container_name
+        name: terraform_storage_container_name
+      - widget: text_area
+        required: true
+        default: git@github.com:rboatwright-softdocs/cycloid-poc.git
+        type: string
+        key: sc_repository
+        name: sc_repository
+      - widget: text_area
+        required: true
+        default: test_import_stack
+        type: string
+        key: sc_path
+        name: sc_path
+      - widget: text_area
+        required: true
+        default: config
+        type: string
+        key: config_git_branch
+        name: config_git_branch
+      - widget: text_area
+        required: true
+        default: stacks
+        type: string
+        key: sc_branch
+        name: sc_branch
+      - widget: text_area
+        required: true
+        default: ((softdocs-azure.client_id))
+        type: string
+        key: azure_client_id
+        name: azure_client_id
+      - widget: text_area
+        required: true
+        default: softdocs
+        type: string
+        key: organization
+        name: organization
+    - name: terraform
+      technologies:
+      - terraform
+      vars:
+      - widget: text_area
+        required: true
+        default: ReadWrite
+        type: string
+        key: azurerm_linux_virtual_machine_bootstrap_cycloid_worker_trial_cycloid_worker_os_disk_0_caching
+        name: azurerm_linux_virtual_machine_bootstrap_cycloid_worker_trial_cycloid_worker_os_disk_0_caching
+      - widget: text_area
+        required: true
+        default: eastus
+        type: string
+        key: azurerm_linux_virtual_machine_softdocs_node_js_azure_test_webapp_location
+        name: azurerm_linux_virtual_machine_softdocs_node_js_azure_test_webapp_location
+      - widget: text_area
+        required: true
+        default: ReadWrite
+        type: string
+        key: azurerm_linux_virtual_machine_softdocs_node_js_azure_test_webapp_os_disk_0_caching
+        name: azurerm_linux_virtual_machine_softdocs_node_js_azure_test_webapp_os_disk_0_caching
+      - widget: text_area
+        required: true
+        default: cycloid
+        type: string
+        key: azurerm_linux_virtual_machine_bootstrap_cycloid_worker_trial_cycloid_worker_admin_username
+        name: azurerm_linux_virtual_machine_bootstrap_cycloid_worker_trial_cycloid_worker_admin_username
+      - widget: text_area
+        required: true
+        default: Standard_D2_v2
+        type: string
+        key: azurerm_linux_virtual_machine_bootstrap_cycloid_worker_trial_cycloid_worker_size
+        name: azurerm_linux_virtual_machine_bootstrap_cycloid_worker_trial_cycloid_worker_size
+      - widget: text_area
+        required: true
+        default: softdocs-node-js-azure-test-webapp
+        type: string
+        key: azurerm_linux_virtual_machine_softdocs_node_js_azure_test_webapp_name
+        name: azurerm_linux_virtual_machine_softdocs_node_js_azure_test_webapp_name
+      - widget: text_area
+        required: true
+        default: Standard_DS1_v2
+        type: string
+        key: azurerm_linux_virtual_machine_softdocs_node_js_azure_test_webapp_size
+        name: azurerm_linux_virtual_machine_softdocs_node_js_azure_test_webapp_size
+      - widget: text_area
+        required: true
+        default: bootstrap-cycloid-worker-trial-cycloid-worker
+        type: string
+        key: azurerm_linux_virtual_machine_bootstrap_cycloid_worker_trial_cycloid_worker_name
+        name: azurerm_linux_virtual_machine_bootstrap_cycloid_worker_trial_cycloid_worker_name
+      - widget: text_area
+        required: true
+        default: Standard_LRS
+        type: string
+        key: azurerm_linux_virtual_machine_bootstrap_cycloid_worker_trial_cycloid_worker_os_disk_0_storage_account_type
+        name: azurerm_linux_virtual_machine_bootstrap_cycloid_worker_trial_cycloid_worker_os_disk_0_storage_account_type
+      - widget: text_area
+        required: true
+        default: Standard_LRS
+        type: string
+        key: azurerm_linux_virtual_machine_softdocs_node_js_azure_test_webapp_os_disk_0_storage_account_type
+        name: azurerm_linux_virtual_machine_softdocs_node_js_azure_test_webapp_os_disk_0_storage_account_type
+      - widget: text_area
+        required: true
+        default: eastus
+        type: string
+        key: azurerm_linux_virtual_machine_bootstrap_cycloid_worker_trial_cycloid_worker_location
+        name: azurerm_linux_virtual_machine_bootstrap_cycloid_worker_trial_cycloid_worker_location
+      - widget: text_area
+        required: true
+        default:
+        - /subscriptions/950a0d79-3274-4ab3-94c5-f6d49a24cf16/resourceGroups/cycloid-rg/providers/Microsoft.Network/networkInterfaces/bootstrap-cycloid-worker-trial-cycloid-worker
+        type: array
+        key: azurerm_linux_virtual_machine_bootstrap_cycloid_worker_trial_cycloid_worker_network_interface_ids
+        name: azurerm_linux_virtual_machine_bootstrap_cycloid_worker_trial_cycloid_worker_network_interface_ids
+      - widget: text_area
+        required: true
+        default: cycloid
+        type: string
+        key: azurerm_linux_virtual_machine_softdocs_node_js_azure_test_webapp_admin_username
+        name: azurerm_linux_virtual_machine_softdocs_node_js_azure_test_webapp_admin_username
+      - widget: text_area
+        required: true
+        default:
+        - /subscriptions/950a0d79-3274-4ab3-94c5-f6d49a24cf16/resourceGroups/cycloid-rg/providers/Microsoft.Network/networkInterfaces/softdocs-node-js-azure-test-webapp
+        type: array
+        key: azurerm_linux_virtual_machine_softdocs_node_js_azure_test_webapp_network_interface_ids
+        name: azurerm_linux_virtual_machine_softdocs_node_js_azure_test_webapp_network_interface_ids

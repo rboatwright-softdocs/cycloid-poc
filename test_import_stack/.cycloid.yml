@@ -19,3 +19,7 @@ config:
       variables:
         destination: ($ project $)/pipeline/variables-($ environment $).yml
         path: pipeline/default/variables.sample.yaml
+    terraform:
+      test_import_stack:
+        destination: ($ project $)/terraform/($ environment $)/test_import_stack.tf
+        path: terraform/default/test_import_stack.tf.sample
