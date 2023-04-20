@@ -1,0 +1,21 @@
+version: "2"
+name: CAP Dev AKS
+canonical: cap_dev_aks
+author: rboatwright
+status: private
+description: CAP Dev AKS
+image: ""
+keywords:
+- CAP Dev AKS
+- provider:azure
+technologies: []
+dependencies: []
+config:
+  default:
+    name: default
+    pipeline:
+      pipeline:
+        path: pipeline/default/terraform-pipeline.yaml
+      variables:
+        destination: ($ project $)/pipeline/variables-($ environment $).yml
+        path: pipeline/default/variables.sample.yaml
